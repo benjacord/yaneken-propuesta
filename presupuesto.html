@@ -3,165 +3,134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Propuesta de Capacitación IA — Imperio Digital × Yaneken</title>
+<title>Propuesta IA — Imperio Digital × Yaneken</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #0a0a0f; color: #e0e0e8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; padding: 40px 20px; }
-  .container { max-width: 760px; margin: 0 auto; }
+  body { background: #0a0a0f; color: #e0e0e8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; }
   a { color: #fd7b2b; text-decoration: none; }
   a:hover { text-decoration: underline; }
 
-  /* Header */
-  .header { text-align: center; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid #1e1e2e; }
-  .logo { font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #fd7b2b; margin-bottom: 8px; }
-  .header h1 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; }
-  .header .subtitle { font-size: 15px; color: #888; }
-  .tag { display: inline-block; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #fd7b2b; border: 1px solid #fd7b2b44; border-radius: 4px; padding: 3px 10px; margin-top: 12px; }
-
-  /* Sections */
-  .section { margin-bottom: 40px; }
-  .section h2 { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #1e1e2e; }
-  .section h3 { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 6px; }
-  .section p, .section li { font-size: 15px; color: #c0c0cc; }
-  .section ul { padding-left: 20px; margin-top: 8px; }
-  .section li { margin-bottom: 6px; }
-
-  /* Stats */
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 20px 0; }
-  .stat { background: #12121a; border: 1px solid #1e1e2e; border-radius: 8px; padding: 14px 16px; text-align: center; }
-  .stat .num { font-size: 22px; font-weight: 700; color: #fd7b2b; }
-  .stat .label { font-size: 12px; color: #888; margin-top: 2px; }
-
-  /* Paquetes */
-  .paquete { border: 1px solid #1e1e2e; border-radius: 10px; padding: 20px 22px; margin-bottom: 16px; background: #12121a; }
-  .paquete.featured { border-color: #fd7b2b55; background: linear-gradient(135deg, #12121a 0%, #1a1410 100%); }
-  .paquete .badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #0a0a0f; background: #fd7b2b; border-radius: 4px; padding: 2px 8px; margin-bottom: 10px; }
-  .paquete h3 { font-size: 18px; color: #fff; margin-bottom: 6px; }
-  .paquete .precio { font-size: 28px; font-weight: 700; color: #fd7b2b; margin: 8px 0 4px; }
-  .paquete .precio small { font-size: 14px; font-weight: 400; color: #888; }
-  .paquete .nota { font-size: 13px; color: #fd7b2b; margin-top: 4px; }
-  .paquete p { font-size: 14px; color: #999; margin-top: 6px; }
-
-  /* Syllabus */
-  .sesion { display: flex; gap: 14px; margin-bottom: 18px; }
-  .sesion-num { flex-shrink: 0; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: #fd7b2b18; color: #fd7b2b; font-weight: 700; font-size: 15px; border-radius: 8px; margin-top: 2px; }
-  .sesion-body h3 { font-size: 15px; color: #fff; margin-bottom: 2px; }
-  .sesion-body p { font-size: 14px; color: #999; }
-
-  /* Fechas */
-  .fecha-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
-  .fecha-item { background: #12121a; border: 1px solid #1e1e2e; border-radius: 8px; padding: 12px 14px; }
-  .fecha-item .k { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
-  .fecha-item .v { font-size: 15px; color: #fff; font-weight: 600; }
-
-  /* Contacto */
-  .contacto { background: #12121a; border: 1px solid #1e1e2e; border-radius: 10px; padding: 24px; text-align: center; }
-  .contacto .name { font-size: 18px; font-weight: 700; color: #fff; }
-  .contacto .email { font-size: 15px; color: #fd7b2b; margin-top: 4px; }
-  .contacto .role { font-size: 13px; color: #888; margin-top: 2px; }
-
-  /* Footer */
-  .footer { text-align: center; margin-top: 48px; padding-top: 24px; border-top: 1px solid #1e1e2e; font-size: 12px; color: #555; }
-
-  @media print {
-    body { background: #0a0a0f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  }
-
-  /* Gate */
+  /* ── GATE ─────────────────────────────────────── */
   #gate {
-    position: fixed; inset: 0; z-index: 999;
+    position: fixed; inset: 0; z-index: 9999;
     background: #0a0a0f;
     display: flex; align-items: center; justify-content: center;
   }
   .gate-box {
-    width: 100%; max-width: 360px;
+    width: 100%; max-width: 340px;
     padding: 40px 32px;
     background: #111118;
     border: 1px solid #1e1e2e;
     border-radius: 16px;
     text-align: center;
   }
-  .gate-logo { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #fd7b2b; margin-bottom: 20px; }
+  .gate-logo { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #fd7b2b; margin-bottom: 24px; }
   .gate-title { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 6px; }
-  .gate-sub { font-size: 14px; color: #666; margin-bottom: 28px; }
-  .gate-input {
+  .gate-sub { font-size: 13px; color: #555; margin-bottom: 28px; line-height: 1.5; }
+  #pwd {
     width: 100%; padding: 12px 16px;
-    background: #0a0a0f; border: 1px solid #2a2a3a;
-    border-radius: 8px; color: #fff; font-size: 16px;
-    text-align: center; letter-spacing: 2px;
-    outline: none; transition: border-color 0.2s;
-    font-family: monospace;
+    background: #0a0a0f;
+    border: 1px solid #2a2a3a;
+    border-radius: 8px;
+    color: #fff; font-size: 16px;
+    text-align: center; letter-spacing: 3px;
+    outline: none; font-family: monospace;
+    transition: border-color 0.2s;
   }
-  .gate-input:focus { border-color: #fd7b2b; }
-  .gate-input.error { border-color: #e05555; animation: shake 0.3s ease; }
-  .gate-btn {
-    margin-top: 14px; width: 100%;
-    padding: 12px; background: #fd7b2b;
-    color: #000; font-size: 15px; font-weight: 700;
+  #pwd:focus { border-color: #fd7b2b55; }
+  #pwd.err { border-color: #e05555; }
+  #gate-btn {
+    margin-top: 12px; width: 100%;
+    padding: 12px;
+    background: #fd7b2b; color: #000;
+    font-size: 15px; font-weight: 700;
     border: none; border-radius: 8px; cursor: pointer;
-    transition: opacity 0.2s;
+    transition: opacity 0.15s;
   }
-  .gate-btn:hover { opacity: 0.85; }
-  .gate-err { font-size: 13px; color: #e05555; margin-top: 10px; min-height: 18px; }
-  #content { display: none; }
-  @keyframes shake {
-    0%,100% { transform: translateX(0); }
-    25% { transform: translateX(-6px); }
-    75% { transform: translateX(6px); }
-  }
+  #gate-btn:hover { opacity: 0.85; }
+  #gate-err { font-size: 13px; color: #e05555; margin-top: 10px; min-height: 18px; }
+
+  /* ── CONTENT ──────────────────────────────────── */
+  #content { display: none; padding: 40px 20px; }
+  .wrap { max-width: 760px; margin: 0 auto; }
+
+  .section { margin-bottom: 40px; }
+  .section h2 { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #1e1e2e; }
+  .section p, .section li { font-size: 15px; color: #c0c0cc; }
+  .section ul { padding-left: 20px; margin-top: 8px; }
+  .section li { margin-bottom: 6px; }
+
+  .header { text-align: center; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid #1e1e2e; }
+  .logo { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #fd7b2b; margin-bottom: 8px; }
+  .header h1 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+  .header .sub { font-size: 15px; color: #888; }
+  .badge-conf { display: inline-block; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #fd7b2b; border: 1px solid #fd7b2b44; border-radius: 4px; padding: 3px 10px; margin-top: 12px; }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 20px 0; }
+  .stat { background: #12121a; border: 1px solid #1e1e2e; border-radius: 8px; padding: 14px 16px; text-align: center; }
+  .stat .num { font-size: 22px; font-weight: 700; color: #fd7b2b; }
+  .stat .lbl { font-size: 12px; color: #888; margin-top: 2px; }
+
+  .paquete { border: 1px solid #1e1e2e; border-radius: 10px; padding: 20px 22px; margin-bottom: 16px; background: #12121a; }
+  .paquete.rec { border-color: #fd7b2b55; background: linear-gradient(135deg, #12121a 0%, #1a1410 100%); }
+  .paquete .pbadge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #0a0a0f; background: #fd7b2b; border-radius: 4px; padding: 2px 8px; margin-bottom: 10px; }
+  .paquete h3 { font-size: 18px; color: #fff; margin-bottom: 6px; }
+  .paquete .precio { font-size: 28px; font-weight: 700; color: #fd7b2b; margin: 8px 0 4px; }
+  .paquete .precio small { font-size: 14px; font-weight: 400; color: #888; }
+  .paquete .nota { font-size: 13px; color: #fd7b2b; margin-top: 4px; }
+  .paquete p { font-size: 14px; color: #999; margin-top: 8px; }
+
+  .sesion { display: flex; gap: 14px; margin-bottom: 18px; }
+  .snum { flex-shrink: 0; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: #fd7b2b18; color: #fd7b2b; font-weight: 700; font-size: 15px; border-radius: 8px; margin-top: 2px; }
+  .sbody h3 { font-size: 15px; color: #fff; margin-bottom: 2px; }
+  .sbody p { font-size: 14px; color: #999; }
+
+  .fgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+  .fitem { background: #12121a; border: 1px solid #1e1e2e; border-radius: 8px; padding: 12px 14px; }
+  .fitem .k { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
+  .fitem .v { font-size: 15px; color: #fff; font-weight: 600; }
+
+  .cbox { background: #12121a; border: 1px solid #1e1e2e; border-radius: 10px; padding: 24px; text-align: center; }
+  .cbox .name { font-size: 18px; font-weight: 700; color: #fff; }
+  .cbox .email { font-size: 15px; color: #fd7b2b; margin-top: 4px; }
+  .cbox .role { font-size: 13px; color: #888; margin-top: 2px; }
+
+  footer { text-align: center; margin-top: 48px; padding-top: 24px; border-top: 1px solid #1e1e2e; font-size: 12px; color: #555; }
 </style>
 </head>
 <body>
 
-<!-- Gate de acceso -->
+<!-- ══ GATE ══ -->
 <div id="gate">
   <div class="gate-box">
     <div class="gate-logo">Imperio Digital</div>
     <div class="gate-title">Propuesta Yaneken</div>
     <div class="gate-sub">Documento confidencial.<br>Ingresa la clave de acceso.</div>
-    <input id="pwd" class="gate-input" type="password" placeholder="••••••••••••" autocomplete="off" />
-    <button class="gate-btn" onclick="checkPwd()">Acceder →</button>
-    <div class="gate-err" id="err"></div>
+    <input id="pwd" type="password" placeholder="••••••••••••" autocomplete="off" />
+    <button id="gate-btn" onclick="checkPwd()">Acceder →</button>
+    <div id="gate-err"></div>
   </div>
 </div>
 
-<script>
-  const input = document.getElementById('pwd');
-  input.addEventListener('keydown', e => { if (e.key === 'Enter') checkPwd(); });
-  function checkPwd() {
-    const val = input.value.trim().toLowerCase();
-    if (val === 'yaneken2026') {
-      document.getElementById('gate').style.display = 'none';
-      document.getElementById('content').style.display = 'block';
-    } else {
-      input.classList.add('error');
-      document.getElementById('err').textContent = 'Clave incorrecta. Intenta de nuevo.';
-      input.value = '';
-      setTimeout(() => input.classList.remove('error'), 400);
-    }
-  }
-</script>
-
+<!-- ══ CONTENIDO (oculto hasta auth) ══ -->
 <div id="content">
-<div class="container">
+<div class="wrap">
 
-  <!-- Header -->
   <div class="header">
     <div class="logo">Imperio Digital</div>
     <h1>Propuesta de Capacitación IA</h1>
-    <div class="subtitle">Preparado para Yaneken — Marzo 2026</div>
-    <div class="tag">Confidencial</div>
+    <div class="sub">Preparado para Yaneken — Marzo 2026</div>
+    <span class="badge-conf">Confidencial</span>
   </div>
 
-  <!-- Quiénes somos -->
   <div class="section">
     <h2>Quiénes somos</h2>
-    <p><strong>Imperio Digital</strong> es la comunidad de IA y automatizaciones líder en Latinoamérica. Llevamos más de 2 años ayudando a profesionales y empresas a integrar inteligencia artificial en su operación diaria — con resultados reales, no teoría.</p>
+    <p><strong style="color:#fff;">Imperio Digital</strong> es la comunidad de IA y automatizaciones líder en Latinoamérica. Llevamos más de 2 años ayudando a profesionales y empresas a integrar inteligencia artificial en su operación diaria — con resultados reales, no teoría.</p>
     <div class="stats">
-      <div class="stat"><div class="num">55K+</div><div class="label">Suscriptores YouTube</div></div>
-      <div class="stat"><div class="num">500+</div><div class="label">Miembros activos Skool</div></div>
-      <div class="stat"><div class="num">10K+</div><div class="label">Alumnos que han confiado</div></div>
-      <div class="stat"><div class="num">#1</div><div class="label">Comunidad hispanohablante IA — 2 años consecutivos</div></div>
+      <div class="stat"><div class="num">55K+</div><div class="lbl">Suscriptores YouTube</div></div>
+      <div class="stat"><div class="num">500+</div><div class="lbl">Miembros activos Skool</div></div>
+      <div class="stat"><div class="num">10K+</div><div class="lbl">Alumnos que han confiado</div></div>
+      <div class="stat"><div class="num">#1</div><div class="lbl">Comunidad hispanohablante IA — 2 años consecutivos</div></div>
     </div>
     <ul>
       <li>YouTube: <a href="https://youtube.com/@bencord" target="_blank">youtube.com/@bencord</a></li>
@@ -169,104 +138,110 @@
     </ul>
   </div>
 
-  <!-- Propuesta -->
   <div class="section">
     <h2>Propuesta</h2>
-
     <div class="paquete">
       <h3>Paquete 1 — Sesión Inicial</h3>
       <div class="precio">70 UF <small>+ IVA</small></div>
-      <p>Sesión presencial de 2-3 horas con efecto wow: todos los asistentes salen usando Claude para resolver un problema real de su día a día. Ideal para probar el formato antes de comprometerse con el bootcamp completo.</p>
+      <p>Sesión presencial de 2-3 horas con efecto wow: todos salen usando Claude para resolver un problema real de su día a día. Ideal para probar el formato antes de comprometerse con el bootcamp.</p>
     </div>
-
-    <div class="paquete featured">
-      <div class="badge">⭐ Recomendado</div>
+    <div class="paquete rec">
+      <div class="pbadge">⭐ Recomendado</div>
       <h3>Paquete 2 — Bootcamp IA Aplicada</h3>
       <div class="precio">130 UF <small>+ IVA</small></div>
       <div class="nota">~22 UF por sesión vs 70 UF la sesión suelta</div>
-      <p>6 sesiones de 80 minutos. Del ecosistema IA al proyecto propio implementado. Cada participante termina con una automatización real funcionando en su área. Es el camino completo para que el equipo adopte IA de verdad.</p>
+      <p>6 sesiones de 80 minutos. Del ecosistema IA al proyecto propio implementado. Cada participante termina con una automatización real funcionando en su área.</p>
     </div>
   </div>
 
-  <!-- Syllabus -->
   <div class="section">
     <h2>Syllabus del Bootcamp</h2>
-    <p style="margin-bottom: 20px; font-size: 14px; color: #888;">6 sesiones de 80 minutos · Presencial · Enfoque 100% práctico</p>
+    <p style="margin-bottom:20px;font-size:14px;color:#888;">6 sesiones · 80 minutos · Presencial · 100% práctico</p>
 
     <div class="sesion">
-      <div class="sesion-num">1</div>
-      <div class="sesion-body">
+      <div class="snum">1</div>
+      <div class="sbody">
         <h3>El ecosistema IA hoy</h3>
-        <p>Mapa completo: qué herramienta para qué. Determinísticas vs agénticas. No cegarse en una sola herramienta.</p>
+        <p>Mapa completo: qué herramienta para qué. Determinísticas vs agénticas. No cegarse en una sola herramienta — hoy es Claude Code, mañana puede ser otra.</p>
       </div>
     </div>
-
     <div class="sesion">
-      <div class="sesion-num">2</div>
-      <div class="sesion-body">
+      <div class="snum">2</div>
+      <div class="sbody">
         <h3>Claude desde cero</h3>
-        <p>Cómo usarlo bien, skills, estructura. Del prompt básico a resultados reales.</p>
+        <p>Cómo usarlo bien, skills, estructura, CLAUDE.md. Del prompt básico a resultados que sorprenden.</p>
       </div>
     </div>
-
     <div class="sesion">
-      <div class="sesion-num">3</div>
-      <div class="sesion-body">
-        <h3>Claude en acción</h3>
-        <p>Demos en vivo con casos reales de retail. Excel → Claude. Datos → insights en segundos.</p>
+      <div class="snum">3</div>
+      <div class="sbody">
+        <h3>Claude en acción — demos reales</h3>
+        <p>Casos prácticos de retail en vivo: Excel → Claude, análisis de datos → insights en segundos, reportes automáticos.</p>
       </div>
     </div>
-
     <div class="sesion">
-      <div class="sesion-num">4</div>
-      <div class="sesion-body">
+      <div class="snum">4</div>
+      <div class="sbody">
         <h3>Detectar oportunidades</h3>
-        <p>Cómo mapear tu día, identificar cuellos de botella y definir qué automatizar primero.</p>
+        <p>Cómo mapear tu día, identificar cuellos de botella y definir qué automatizar primero. El real valor no es saber técnica — es saber identificar el dolor.</p>
       </div>
     </div>
-
     <div class="sesion">
-      <div class="sesion-num">5</div>
-      <div class="sesion-body">
+      <div class="snum">5</div>
+      <div class="sbody">
         <h3>Automatizaciones reales</h3>
-        <p>Construir una automatización desde cero con tu propio dolor. Cada participante trabaja su caso.</p>
+        <p>Cada participante construye una automatización desde cero con su propio dolor. De la idea al flujo funcionando.</p>
       </div>
     </div>
-
     <div class="sesion">
-      <div class="sesion-num">6</div>
-      <div class="sesion-body">
-        <h3>Demo día + asesoría</h3>
-        <p>Cada participante presenta su proyecto. Asesoría personalizada. Cierre con plan de acción.</p>
+      <div class="snum">6</div>
+      <div class="sbody">
+        <h3>Demo día + asesoría personalizada</h3>
+        <p>Cada participante presenta su proyecto. Cierre con plan de acción. Nadie sale con las manos vacías.</p>
       </div>
     </div>
   </div>
 
-  <!-- Fechas -->
   <div class="section">
     <h2>Fechas tentativas</h2>
-    <div class="fecha-grid">
-      <div class="fecha-item"><div class="k">Inicio</div><div class="v">18 de marzo 2026</div></div>
-      <div class="fecha-item"><div class="k">Día</div><div class="v">Todos los miércoles</div></div>
-      <div class="fecha-item"><div class="k">Duración</div><div class="v">80 minutos por sesión</div></div>
-      <div class="fecha-item"><div class="k">Modalidad</div><div class="v">Presencial · Adaptable</div></div>
+    <div class="fgrid">
+      <div class="fitem"><div class="k">Inicio</div><div class="v">18 de marzo 2026</div></div>
+      <div class="fitem"><div class="k">Día</div><div class="v">Todos los miércoles</div></div>
+      <div class="fitem"><div class="k">Duración</div><div class="v">80 min por sesión</div></div>
+      <div class="fitem"><div class="k">Modalidad</div><div class="v">Presencial · Adaptable</div></div>
     </div>
   </div>
 
-  <!-- Contacto -->
   <div class="section">
-    <div class="contacto">
+    <div class="cbox">
       <div class="name">Benjamín Cordero</div>
       <div class="email">benja@imperiodigital.ai</div>
       <div class="role">Fundador · Imperio Digital</div>
     </div>
   </div>
 
-  <div class="footer">
-    © 2026 Imperio Digital · Documento confidencial preparado para Yaneken
-  </div>
+  <footer>© 2026 Imperio Digital · Documento confidencial preparado para Yaneken</footer>
 
 </div>
-</div><!-- /content -->
+</div>
+
+<script>
+  var input = document.getElementById('pwd');
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter') checkPwd(); });
+
+  function checkPwd() {
+    var val = input.value.trim().toLowerCase();
+    if (val === 'yaneken2026') {
+      document.getElementById('gate').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    } else {
+      input.classList.add('err');
+      document.getElementById('gate-err').textContent = 'Clave incorrecta. Intenta de nuevo.';
+      input.value = '';
+      setTimeout(function(){ input.classList.remove('err'); }, 500);
+    }
+  }
+</script>
+
 </body>
 </html>
